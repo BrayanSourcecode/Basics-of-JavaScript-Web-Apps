@@ -4,6 +4,8 @@
     import esriConfig from "https://js.arcgis.com/4.25/@arcgis/core/config.js";
     // importamos el modulo para visualizar el mapa 
     import MapView from "https://js.arcgis.com/4.25/@arcgis/core/views/MapView.js";
+    // importamos el modulo locate para la localizacion 
+    import Locate from "https://js.arcgis.com/4.25/@arcgis/core/widgets/Locate";
 // configuracion de la api
     esriConfig.apiKey = "AAPKa786869977e644fcb62ff91efeea437djen3M1VbisXMFAVXlkamy7xxj5X7dWSOnCoC_EqWKF4Xtip89C9Q60T4VVZfbYpj";
 // tipo de mapa 
@@ -13,7 +15,17 @@
 // visualizamos el mapa y ajustamos las cordenadas
     const view = new MapView({
       map: map,
-      center:[-118.80500,34.02700], // Longitude, latitude
-      zoom: 13, // Zoom level
+      center:[-40, 28], // Longitude, latitude
+      zoom: 2, // Zoom level
       container: "viewDiv" // Div element
     });
+
+    const locate = new Locate({
+      view: view,
+      useHeadingEnabled: false,
+      goToOverride: function(view, options) {
+        options.target.scale = 1500;
+        return view.goTo(options.target);
+      }
+    });
+    view.ui.add(locate, "top-left");
