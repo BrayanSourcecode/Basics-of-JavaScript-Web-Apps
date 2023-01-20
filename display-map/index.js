@@ -1,12 +1,12 @@
-    // importamos el modulo map para escoger el mapa que queremos crear
+  // importamos el modulo map para escoger el mapa que queremos crear
     import Map from "https://js.arcgis.com/4.25/@arcgis/core/Map.js";
-    // importamos en modulo de configuracion para conectarnos ala  api
+  // importamos en modulo de configuracion para conectarnos ala  api
     import esriConfig from "https://js.arcgis.com/4.25/@arcgis/core/config.js";
-    // importamos el modulo para visualizar el mapa 
+  // importamos el modulo para visualizar el mapa 
     import MapView from "https://js.arcgis.com/4.25/@arcgis/core/views/MapView.js";
-// configuracion de la api
-    esriConfig.apiKey = "AAPKa786869977e644fcb62ff91efeea437djen3M1VbisXMFAVXlkamy7xxj5X7dWSOnCoC_EqWKF4Xtip89C9Q60T4VVZfbYpj";
-// tipo de mapa 
+  // configuracion de la api   
+    esriConfig.apiKey = "AAPK3a46155e72e141f7a1e526779e26ee9eAjXhDfndw1NljGMOgVuF26eFX3-eeUXZZOyG1ndpeWqpSuegyvOx67wvbav2qGrx";
+  // tipo de mapa 
     const map = new Map({
       basemap: "arcgis-topographic" // Basemap layer service
     });
@@ -17,3 +17,5 @@
       zoom: 13, // Zoom level
       container: "viewDiv" // Div element
     });
+  
+
