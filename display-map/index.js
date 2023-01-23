@@ -8,7 +8,7 @@
     esriConfig.apiKey = "AAPK3a46155e72e141f7a1e526779e26ee9eAjXhDfndw1NljGMOgVuF26eFX3-eeUXZZOyG1ndpeWqpSuegyvOx67wvbav2qGrx";
   // tipo de mapa 
     const map = new Map({
-      basemap: "arcgis-topographic" // Basemap layer service
+      basemap: "topo-vector" // Basemap layer service
     });
 // visualizamos el mapa y ajustamos las cordenadas
     const view = new MapView({

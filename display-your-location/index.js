@@ -5,9 +5,9 @@
     // importamos el modulo para visualizar el mapa 
     import MapView from "https://js.arcgis.com/4.25/@arcgis/core/views/MapView.js";
     // importamos el modulo locate para la localizacion 
-    import Locate from "https://js.arcgis.com/4.25/@arcgis/core/widgets/Locate";
-    // import Graphic from "https://js.arcgis.com/@arcgis/core/Graphic"
-    // import Track from "https://js.arcgis.com/4.25/@arcgis/core/widgets/Track"
+    import Locate from "https://js.arcgis.com/4.25/@arcgis/core/widgets/Locate.js";
+    import Graphic from "https://js.arcgis.com/4.25/@arcgis/core/Graphic.js"
+    import Track from "https://js.arcgis.com/4.25/@arcgis/core/widgets/Track.js"
 // configuracion de la api
     esriConfig.apiKey = "AAPKa786869977e644fcb62ff91efeea437djen3M1VbisXMFAVXlkamy7xxj5X7dWSOnCoC_EqWKF4Xtip89C9Q60T4VVZfbYpj";
 // tipo de mapa 
@@ -32,19 +32,19 @@
     });
     view.ui.add(locate,"top-left");
 
-    // const track = new Track({
-    //   view: view,
-    //   graphic: new Graphic({
-    //     symbol: {
-    //       type: "simple-marker",
-    //       size: "12px",
-    //       color: "green",
-    //       outline: {
-    //         color: "#efefef",
-    //         width: "1.5px"
-    //       }
-    //     }
-    //   }),
-    //   useHeadingEnabled: false
-    // });
-    // view.ui.add(track, "top-left");
+    const track = new Track({
+      view: view,
+      graphic: new Graphic({
+        symbol: {
+          type: "simple-marker",
+          size: "12px",
+          color: "green",
+          outline: {
+            color: "#efefef",
+            width: "1.5px"
+          }
+        }
+      }),
+      useHeadingEnabled: false
+    });
+    view.ui.add(track, "top-left");
