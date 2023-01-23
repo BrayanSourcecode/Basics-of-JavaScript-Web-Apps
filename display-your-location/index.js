@@ -12,9 +12,9 @@
     esriConfig.apiKey = "AAPKa786869977e644fcb62ff91efeea437djen3M1VbisXMFAVXlkamy7xxj5X7dWSOnCoC_EqWKF4Xtip89C9Q60T4VVZfbYpj";
 // tipo de mapa 
     const map = new Map({
-      basemap: "arcgis-navigation" // Basemap layer service
+      basemap: "arcgis-navigation" // Basemap layer service // hay varias bases 
     });
-// visualizamos el mapa y ajustamos las cordenadas
+// visualizamos el mapa y ajustamos las cordenadas tanbien s epuede hacer en 3d si usamos el  new SceneView
     const view = new MapView({
       map: map,
       center:[-40, 28], // Longitude, latitude
@@ -32,19 +32,19 @@
     });
     view.ui.add(locate,"top-left");
 
-    const track = new Track({
-      view: view,
-      graphic: new Graphic({
-        symbol: {
-          type: "simple-marker",
-          size: "12px",
-          color: "green",
-          outline: {
-            color: "#efefef",
-            width: "1.5px"
-          }
-        }
-      }),
-      useHeadingEnabled: false
-    });
-    view.ui.add(track, "top-left");
+    // const track = new Track({
+    //   view: view,
+    //   graphic: new Graphic({
+    //     symbol: {
+    //       type: "simple-marker",
+    //       size: "12px",
+    //       color: "green",
+    //       outline: {
+    //         color: "#efefef",
+    //         width: "1.5px"
+    //       }
+    //     }
+    //   }),
+    //   useHeadingEnabled: false
+    // });
+    // view.ui.add(track, "top-left");
