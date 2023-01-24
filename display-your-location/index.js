@@ -23,28 +23,40 @@
     });
 
     const locate = new Locate({
-      view:view,
-      useHeadingEnabled: false,
-      goToOverride: function(view, options) {
-        options.target.scale = 1500;
-        return view.goTo(options.target);
-      }
-    });
-    view.ui.add(locate,"top-left");
+      view:view, //añade el boton de localizacion al la vista que especificamos 
 
-    // const track = new Track({
-    //   view: view,
-    //   graphic: new Graphic({
-    //     symbol: {
-    //       type: "simple-marker",
-    //       size: "12px",
-    //       color: "green",
-    //       outline: {
-    //         color: "#efefef",
-    //         width: "1.5px"
-    //       }
-    //     }
-    //   }),
-    //   useHeadingEnabled: false
-    // });
-    // view.ui.add(track, "top-left");
+      // aca se agrega  configuraciones de la  ubicacion 
+
+       useHeadingEnabled:false, // se pone en falso para que la el mapa no este rotando o girando
+
+      // goToOverride: function(view, options) {
+      //   options.target.scale = 1500;
+      //   return view.goTo(options.target);
+      // }
+
+    });
+
+    view.ui.add(locate,"top-right"); // acede alas propiedade s de la clase view  y se agrega los parametros locate y la pocion donde queremos visualizar
+
+
+
+    
+       const track = new Track({
+         view: view, //añade el boton de rastrear al la vista que especificamos 
+         useHeadingEnabled: false, // se pone en falso para que la el mapa no este rotando o girando
+
+      graphic: new Graphic({
+        symbol: {  // cambia el simbolo actual por el que deseamos
+          type: "simple-marker", // simbolo
+          size: "24px", // tamaño
+          color: "green",//color del simbolo
+          outline: { // cambia el estilo de por fuera del simbolo
+             color: "red", 
+            width: "1.5px" //tamaño
+          }
+        }
+      }),
+
+     });
+
+      view.ui.add(track, "top-left"); // acede alas propiedades de la clase view  y se agrega los parametros track y la pocion donde queremos visualizar el widge
