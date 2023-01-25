@@ -6,7 +6,9 @@
     import MapView from "https://js.arcgis.com/4.25/@arcgis/core/views/MapView.js";
     // importamos el modulo locate para la localizacion 
     import Locate from "https://js.arcgis.com/4.25/@arcgis/core/widgets/Locate.js";
+    // importamos el modulo para dar nuevos estilos es los simbolos
     import Graphic from "https://js.arcgis.com/4.25/@arcgis/core/Graphic.js"
+    // importamos el modulo para  hacer rastreo  de la ubicacion
     import Track from "https://js.arcgis.com/4.25/@arcgis/core/widgets/Track.js"
 // configuracion de la api
     esriConfig.apiKey = "AAPKa786869977e644fcb62ff91efeea437djen3M1VbisXMFAVXlkamy7xxj5X7dWSOnCoC_EqWKF4Xtip89C9Q60T4VVZfbYpj";
@@ -29,10 +31,10 @@
 
        useHeadingEnabled:false, // se pone en falso para que la el mapa no este rotando o girando
 
-      // goToOverride: function(view, options) {
-      //   options.target.scale = 1500;
-      //   return view.goTo(options.target);
-      // }
+        goToOverride: function(view, options) { // es una propiedad que recibe una funcion con dos parametros
+          options.target.scale = 1800;  // la vista ala que le vamos hacer el zoom y la option que es el tamaño del zoom
+          return view.goTo(options.target); // retornamos la vista con las propiedades
+        }
 
     });
 
