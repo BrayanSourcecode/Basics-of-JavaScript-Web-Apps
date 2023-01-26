@@ -82,6 +82,7 @@ graphicsLayer.add(polylineGraphic);
 
 // haora vamos a mostrar un polygon e el mapa
 
+ //pasamos el typo de grafico que vamos  a visualizar  y los parametros  donde lo queremos visualizar
 const Polygon ={
     type:"polygon",
     rings:[
@@ -92,6 +93,8 @@ const Polygon ={
         [-118.808558110679, 34.0035027131376]  //Longitude, latitude
     ]
 };
+
+// creamos el tipo de simbolo  y los colores y proiedades 
 const simpleFillSymbol={
     type:"simple-fill",
     color: [227, 139, 79, 0.8],
@@ -106,4 +109,6 @@ const polygonGraphic = new Graphic({
     simbol:simpleFillSymbol
 
 })
+
+// finalmente agregamos el grafico al mapa 
 graphicsLayer.add(polygonGraphic);
