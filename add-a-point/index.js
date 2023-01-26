@@ -41,15 +41,69 @@ const point = { //Create a point
     symbol: simpleMarkerSymbol
  });
 
-
-
  const graphicsLayer = new GraphicsLayer();
 
  graphicsLayer.add(pointGraphic); // agregamos el punto a la variable 
 
  map.add(graphicsLayer);// finalmente fizualizamos  el map con los parametros de la variable graphi
-
-
-
-
  //// se agrego un punto 
+
+
+
+
+ // se va agregar un alinea haora en el mapa
+
+ //se crea un objectos  con el type y un paths que es los aparametros de la linea 
+ const  Polyline= {
+    type:"polyline",
+    paths:[
+        [-118.821527826096, 34.0139576938577], //Longitude, latitude
+        [-118.814893761649, 34.0080602407843], //Longitude, latitude
+        [-118.808878330345, 34.0016642996246]  //Longitude, latitude
+    ]
+ };
+
+ // despues creamos un  el simbolo con el que vamos a graficar la linea
+const simplelineSymbol ={
+    type:"simple-line",
+    color:"red",
+    width: 2
+};
+
+
+const polylineGraphic = new Graphic({
+    geometry :Polyline,
+    simbol: simplelineSymbol
+})
+// final mente pasamos los paramaetros y mostramos la linea en el mapa 
+graphicsLayer.add(polylineGraphic);
+
+
+
+// haora vamos a mostrar un polygon e el mapa
+
+const Polygon ={
+    type:"polygon",
+    rings:[
+           [-118.818984489994, 34.0137559967283], //Longitude, latitude
+        [-118.806796597377, 34.0215816298725], //Longitude, latitude
+        [-118.791432890735, 34.0163883241613], //Longitude, latitude
+        [-118.79596686535, 34.008564864635],   //Longitude, latitude
+        [-118.808558110679, 34.0035027131376]  //Longitude, latitude
+    ]
+};
+const simpleFillSymbol={
+    type:"simple-fill",
+    color: [227, 139, 79, 0.8],
+    outline:{
+        color:[255, 255, 255],
+        with:1
+    }
+};
+
+const polygonGraphic = new Graphic({
+    geometry:Polygon,
+    simbol:simpleFillSymbol
+
+})
+graphicsLayer.add(polygonGraphic);
