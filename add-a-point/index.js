@@ -28,7 +28,7 @@ const point = { //Create a point
  // despues definimos  el color del punto  y el estilo
  const simpleMarkerSymbol = {
     type: "simple-marker",
-    color: [226, 119, 40],  // Orange
+    color: "red",  // Orange
     outline: {
         color: [255, 255, 255], // White
         width: 1
@@ -67,13 +67,13 @@ const point = { //Create a point
 const simplelineSymbol ={
     type:"simple-line",
     color:"red",
-    width: 2
+    width: 6
 };
 
 
 const polylineGraphic = new Graphic({
     geometry :Polyline,
-    simbol: simplelineSymbol
+    symbol: simplelineSymbol
 })
 // final mente pasamos los paramaetros y mostramos la linea en el mapa 
 graphicsLayer.add(polylineGraphic);
@@ -86,7 +86,7 @@ graphicsLayer.add(polylineGraphic);
 const Polygon ={
     type:"polygon",
     rings:[
-           [-118.818984489994, 34.0137559967283], //Longitude, latitude
+        [-118.818984489994, 34.0137559967283], //Longitude, latitude
         [-118.806796597377, 34.0215816298725], //Longitude, latitude
         [-118.791432890735, 34.0163883241613], //Longitude, latitude
         [-118.79596686535, 34.008564864635],   //Longitude, latitude
@@ -97,18 +97,37 @@ const Polygon ={
 // creamos el tipo de simbolo  y los colores y proiedades 
 const simpleFillSymbol={
     type:"simple-fill",
-    color: [227, 139, 79, 0.8],
+    color: [0,0,255],
     outline:{
-        color:[255, 255, 255],
+        color:[0,0,255],
         with:1
     }
 };
+// parametros para la ventana emergente
+const popupTemplate={
+    title:"{Polygono}",
+    content:"{polygono de prueba}"
+}
+
+
+const attributes={
+Name:"Graphic",
+description:"i am polygono "
+}
 
 const polygonGraphic = new Graphic({
     geometry:Polygon,
-    simbol:simpleFillSymbol
+    symbol:simpleFillSymbol,
+
+// parametros de la ventana emergente
+    attributes: attributes,
+    popupTemplate: popupTemplate
 
 })
 
 // finalmente agregamos el grafico al mapa 
 graphicsLayer.add(polygonGraphic);
+
+
+
+
