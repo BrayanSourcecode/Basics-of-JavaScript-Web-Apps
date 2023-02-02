@@ -84,8 +84,9 @@ function findPlaces(category, pt) {
                                 width: "2px"
                             }
                         },
+                        //agregamos los elementos que vamos aver en la ventana emergente 
                         popupTemplate: {
-                            title: "{PlaceName}", // Data attribute names
+                            title: "{PlaceName}", 
                             content: "{Place_addr}"
                         }
 
