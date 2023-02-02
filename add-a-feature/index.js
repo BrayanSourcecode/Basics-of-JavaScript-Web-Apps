@@ -4,7 +4,7 @@ import esriConfig from "https://js.arcgis.com/4.25/@arcgis/core/config.js"
 import FeatureLayer from"https://js.arcgis.com/4.25/@arcgis/core/layers/FeatureLayer.js"
 
 
- esriConfig.apiKey="AAPK3a46155e72e141f7a1e526779e26ee9eAjXhDfndw1NljGMOgVuF26eFX3-eeUXZZOyG1ndpeWqpSuegyvOx67wvbav2qGrx";
+esriConfig.apiKey="AAPK3a46155e72e141f7a1e526779e26ee9eAjXhDfndw1NljGMOgVuF26eFX3-eeUXZZOyG1ndpeWqpSuegyvOx67wvbav2qGrx";
 
  "BASE MAP"
  const map=new Map({
