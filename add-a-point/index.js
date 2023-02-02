@@ -7,6 +7,9 @@ import MapView from "https://js.arcgis.com/4.25/@arcgis/core/views/MapView.js";
 import Graphic from "https://js.arcgis.com/4.25/@arcgis/core/Graphic.js"
 //HJDGSHSHAJ
 import GraphicsLayer from "https://js.arcgis.com/4.25/@arcgis/core/layers/GraphicsLayer.js"
+
+esriConfig.apiKey = "AAPK3a46155e72e141f7a1e526779e26ee9eAjXhDfndw1NljGMOgVuF26eFX3-eeUXZZOyG1ndpeWqpSuegyvOx67wvbav2qGrx";
+
 const map= new Map({
     basemap:"arcgis-topographic"
 })
@@ -105,14 +108,14 @@ const simpleFillSymbol={
 };
 // parametros para la ventana emergente
 const popupTemplate={
-    title:"{Polygono}",
-    content:"{polygono de prueba}"
+    title:"{Name}",
+    content:"{Description}"
 }
 
 
 const attributes={
 Name:"Graphic",
-description:"i am polygono "
+Description:"i am polygono "
 }
 
 const polygonGraphic = new Graphic({
